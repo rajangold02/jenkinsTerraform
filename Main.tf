@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-        ami = "********"
+        ami = "ami-efa5fe80"
         instance_type = "t2.micro"
         key_name = "jai_terraform"
-                subnet_id = "**********"
-        security_groups = ["********"]
+                subnet_id = "subnet-18008455"
+        security_groups = ["sg-74f26f1f"]
                 associate_public_ip_address = "true"
         tags {
          Name = "jai-tera-form"
@@ -18,8 +18,8 @@ resource "aws_instance" "example" {
 }
 resource "aws_elb" "example" {
   name               = "terra-elb"
-  subnets = ["*********"]
-  security_groups = ["*******"]
+  subnets = ["subnet-18008455"]
+  security_groups = ["sg-74f26f1f"]
 
 
 
